@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+$navbarColor: #141922;
+$footerColor: #141922;
+$bgColor: #1b212b;
+$btnColor: #46c351;
+$btnHoverColor: #2c8a34;
+$textColor: #a9b5cc;
+$infoColor: #2d333d;
+
+$fs-300: 1rem;
+$fs-350: 1.2rem;
+$fs-400: 1.4rem;
+$fs-500: 1.6rem;
+$fs-600: 4rem;
+
+$fss-300: 0.9rem;
+$fss-350: 1rem;
+$fss-400: 1.2rem;
+$fss-600: 2.5rem;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+// ----------------------------------------NAVBAR------------------------------------------------
+header {
+  min-width: 350px;
+  background-color: $navbarColor;
+  width: 100%;
+  height: 100px;
+  color: $textColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  .title {
+    font-size: $fs-500;
+  }
+  a {
+    color: $textColor;
+    text-decoration: none;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    li {
+      display: flex;
+      padding: 0 15px;
+      align-items: center;
+      p {
+        font-size: $fs-300;
+      }
+    }
+  }
+}
+.burger {
+  display: none;
+  cursor: pointer;
+  div {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 3px;
+  }
+}
+.cart {
+  display: flex;
+  align-items: center;
+  padding-left: 40%;
+}
+.logo {
+  height: 30px;
+  margin: 5px;
+}
+
+// ----------------------------------------CONTENT------------------------------------------------
+
+// ----------------------------------------SLIDE-SHOW------------------------------------------------
+
+.content {
+  background-color: $bgColor;
+  height: 170vh;
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  section {
+    width: 70%;
+    .slide-show {
+      display: flex;
+      margin: 80px 0;
+      width: 100%;
+      position: relative;
+
+      .slide-show-container {
+        position: relative;
+        width: 70%;
+        .mySlides-container {
+          .text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: $textColor;
+            font-size: $fss-350;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px 0 0 10px;
+          object-fit: cover;
+        }
+        .prev,
+        .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          padding: 9px 14px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.2s ease;
+          background-color: #272b35;
+          border-radius: 5px;
+          .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .prev {
+          left: 0px;
+        }
+        .next {
+          right: 0px;
+        }
+
+        .prev:hover,
+        .next:hover {
+          background-color: #5d6475;
+        }
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+          from {
+            opacity: 0.4;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .info {
+      width: 30%;
+      background-color: $infoColor;
+      border-radius: 0 10px 10px 0;
+      color: $textColor;
+      padding: 30px;
+      font-size: $fs-350;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      .button-section {
+        height: 100px;
+        background-color: #272b35;
+        border: 1px solid #181d26;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: $fs-400;
+        margin-top: 50px;
+        button {
+          background-color: $btnColor;
+          border: none;
+          border-radius: 5px;
+          color: #fff;
+          font-size: $fs-300;
+          width: 100px;
+          height: 40px;
+        }
+        button:hover {
+          cursor: pointer;
+          background-color: $btnHoverColor;
+        }
+      }
+    }
+  }
+}
+
+// ----------------------------------------PFL------------------------------------------------
+.pfl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    text-align: center;
+    color: $textColor;
+    font-weight: 900;
+    font-size: $fss-400;
+  }
+  .icon {
+    width: 100px;
+  }
+  .enjoy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 350px;
+    height: 150px;
+    background-color: #272b35;
+    color: $textColor;
+    border: 1px solid #181d26;
+    border-radius: 3px;
+    h1 {
+      font-size: $fs-600;
+      font-weight: 900;
+    }
+    p {
+      font-size: $fs-400;
+    }
+  }
+}
+
+// ----------------------------------------PFL INFO------------------------------------------------
+.pfl-info {
+  color: $textColor;
+  width: 60%;
+  margin-top: 20px;
+  p {
+    margin: 50px 0;
+  }
+  button {
+    background-color: $btnColor;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: $fs-300;
+    width: 120px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: $btnHoverColor;
+  }
+}
+
+// ----------------------------------------FOOTER------------------------------------------------
+footer {
+  background-color: $footerColor;
+  color: $textColor;
+  height: 230px;
+  width: 100%;
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  div {
+    width: 80%;
+    section {
+      padding-top: 40px;
+      width: 30%;
+    }
+    p {
+      padding: 10px;
+      font-size: $fs-300;
+    }
+  }
+}
+
+// ----------------------------------------RESPONSIVE------------------------------------------------
+
+@media screen and (max-width: 1600px) {
+  header {
+    .title {
+      font-size: $fs-500;
+    }
+    ul {
+      li {
+        p {
+          font-size: $fs-300;
+        }
+      }
+    }
+  }
+  .content {
+    height: 200vh;
+    section {
+      .slide-show {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .slide-show-container {
+          img {
+            border-radius: 10px 10px 0 0;
+          }
+        }
+
+        .info {
+          font-size: $fss-350;
+          width: 70%;
+          border-radius: 0 0 10px 10px;
+          margin-top: -20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .pfl {
+    .icon {
+      width: 70px;
+    }
+    .enjoy {
+      width: 300px;
+      height: 120px;
+      h1 {
+        font-size: $fss-600;
+      }
+      p {
+        font-size: $fss-400;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .cart {
+    padding-left: 20%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .content {
+    overflow-x: hidden;
+    section {
+      width: 80%;
+    }
+  }
+  header :nth-child(3) {
+    order: 4;
+  }
+  header :nth-child(4) {
+    order: 3;
+  }
+
+  header {
+    .title {
+      position: relative;
+      font-size: $fss-400;
+    }
+    .burger {
+      display: block;
+    }
+
+    .navbar {
+      display: none;
+
+      ul {
+        position: absolute;
+        right: 0;
+        top: 100px;
+        z-index: 999;
+        background-color: #a9b5ccd2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 92vh;
+        width: 70%;
+        li {
+          p {
+            font-size: $fss-600;
+            color: black;
+          }
+        }
+      }
+    }
+    .navbar.active {
+      display: block;
+    }
+
+    .logo {
+      height: 50px;
+    }
+    .cart .logo {
+      height: 30px;
+    }
+  }
+
+  .pfl {
+    .icon {
+      width: 50px;
+    }
+    .enjoy {
+      width: 200px;
+      height: 100px;
+      h1 {
+        font-size: $fss-400;
+      }
+    }
+  }
+  .pfl-info {
+    width: 100%;
+  }
+  footer {
+    div {
+      section {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .content {
+    section {
+      .slide-show {
+        .slide-show-container {
+          width: 80%;
+        }
+        .info {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .content {
+    section {
+      .slide-show {
+        .slide-show-container {
+          width: 85%;
+          .mySlides-container {
+            .text {
+              font-size: $fss-300;
+            }
+          }
+        }
+        .info {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .content {
+    section {
+      .slide-show {
+        .slide-show-container {
+          width: 90%;
+        }
+        .info {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    .navbar {
+      ul {
+        li {
+          p {
+            font-size: $fss-400;
+            font-weight: 900;
+          }
+        }
+      }
+    }
+  }
+  .content {
+    height: 250vh;
+    section {
+      .slide-show {
+        .slide-show-container {
+          width: 100%;
+        }
+        .info {
+          width: 100%;
+        }
+        .button-section {
+          padding: 10px;
+          h1 {
+            font-size: $fss-400;
+          }
+          p {
+            font-size: $fss-400;
+          }
+        }
+      }
+    }
+  }
+  .pfl {
+    .icon {
+      width: 40px;
+    }
+    .right {
+      width: 10px;
+    }
+    .enjoy {
+      width: 150px;
+      height: 70px;
+      h1 {
+        font-size: $fss-300;
+      }
+      p {
+        font-size: $fss-300;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    section {
+      .slide-show {
+        .info {
+          .button-section {
+            button {
+              margin: 5px;
+            }
+            p {
+              font-size: $fss-300;
+            }
+          }
+        }
+      }
+    }
+  }
+}
